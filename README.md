@@ -1,2 +1,0 @@
-# ALFABER-LENNY-WEDDING-INVITATION
-The Wedding Invitation
