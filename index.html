@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Wedding of Romeo & Juliet</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music" src="assets/music.mp3" loop></audio>
+
+    <div id="floral-container"></div>
+
+    <div id="envelope-screen">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="letter">
+                    <h2 class="gold-text">Romeo & Juliet</h2>
+                    <p>Kepada Yth.<br>Bapak/Ibu/Saudara/i</p>
+                    <button id="open-btn" class="luxury-btn">Buka Undangan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cinematic-screen" class="hidden">
+        <h1 class="fade-text">Sebuah Perjalanan Cinta...</h1>
+        <h1 class="fade-text delay-1">Yang Ditulis Oleh Takdir...</h1>
+    </div>
+
+    <div id="main-content" class="hidden">
+        
+        <section class="slide-page parallax-bg" id="hero">
+            <div class="overlay-dark">
+                <p class="subtitle">The Wedding Celebration Of</p>
+                <h1 class="title">Romeo & Juliet</h1>
+                <p class="date">Minggu, 12 Desember 2026</p>
+                <div class="scroll-indicator">
+                    <span>Geser ke Atas</span>
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide-page" id="story">
+            <div class="content-box">
+                <h2 class="gold-text">Our Story</h2>
+                <div class="timeline">
+                    <div class="time-item">
+                        <h3>Pertama Bertemu (2020)</h3>
+                        <p>Kisah kami dimulai dari sebuah kebetulan yang indah di sudut kota.</p>
+                    </div>
+                    <div class="time-item">
+                        <h3>Memutuskan Bersama (2023)</h3>
+                        <p>Setelah melewati berbagai musim, kami berjanji untuk saling melengkapi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide-page" id="gallery-section">
+            <div class="content-box">
+                <h2 class="gold-text">Our Moments</h2>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="assets/galeri-1.jpg" alt="Gallery"></div>
+                        <div class="swiper-slide"><img src="assets/galeri-2.jpg" alt="Gallery"></div>
+                        <div class="swiper-slide"><img src="assets/galeri-3.jpg" alt="Gallery"></div>
+                        <div class="swiper-slide"><img src="assets/galeri-4.jpg" alt="Gallery"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide-page" id="rsvp-section">
+            <div class="content-box">
+                <h2 class="gold-text">Save The Date</h2>
+                <div class="countdown" id="countdown">
+                    <div><span id="hari">00</span><p>Hari</p></div>
+                    <div><span id="jam">00</span><p>Jam</p></div>
+                    <div><span id="menit">00</span><p>Menit</p></div>
+                    <div><span id="detik">00</span><p>Detik</p></div>
+                </div>
+
+                <h2 class="gold-text rsvp-title">RSVP</h2>
+                <form id="rsvp-form" name="submit-to-google-sheet">
+                    <input type="text" name="Nama" placeholder="Nama Anda" required>
+                    <select name="Kehadiran" required>
+                        <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Tidak Hadir">Tidak Hadir</option>
+                    </select>
+                    <textarea name="Pesan" placeholder="Berikan Ucapan/Doa" rows="3"></textarea>
+                    <button type="submit" class="luxury-btn">Kirim Konfirmasi</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
