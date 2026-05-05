@@ -1,55 +1,42 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Undangan Elite</title>
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<!-- SOUND EFFECT -->
-<audio id="openSound">
-  <source src="assets/open.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 3D ENVELOPE -->
-<div id="envelope" onclick="openEnvelope()">
-  <div class="flap"></div>
-  <div class="letter">Buka Undangan</div>
+<div id="opening">
+  <video autoplay muted playsinline>
+    <source src="assets/opening.mp4">
+  </video>
+  <div class="overlay">
+    <h1>Nama Kamu</h1>
+    <p>Are Getting Married</p>
+    <button onclick="start()">Open Invitation</button>
+  </div>
 </div>
 
-<!-- FLOWER CANVAS -->
+<div id="envelope" onclick="openEnvelope()">
+  <div class="top"></div>
+  <div class="body">Klik untuk membuka</div>
+</div>
+
 <canvas id="flowers"></canvas>
 
-<!-- MAIN -->
-<div id="main" class="hidden">
+<div id="app" class="hidden">
 
-<audio id="music" loop>
-  <source src="assets/music.mp3" type="audio/mpeg">
-</audio>
-
-<section class="parallax">
-  <h1>Nama Pria & Nama Wanita</h1>
+<section class="slide active">
+  <h1>Nama Pengantin</h1>
 </section>
 
-<section>
-  <h2>Countdown</h2>
-  <div id="timer"></div>
+<section class="slide">
+  <h2>Save The Date</h2>
+  <div id="countdown"></div>
 </section>
 
-<!-- LOVE STORY -->
-<section class="timeline">
-  <h2>Cerita Cinta</h2>
-  <div class="timeline-item">Pertemuan - 2020</div>
-  <div class="timeline-item">Lamaran - 2025</div>
-  <div class="timeline-item">Menikah - 2026</div>
+<section class="slide">
+  <h2>Love Story</h2>
+  <div class="timeline">
+    <div>Awal Bertemu</div>
+    <div>Lamaran</div>
+    <div>Menikah</div>
+  </div>
 </section>
 
-<!-- GALLERY -->
-<section>
-  <h2>Gallery</h2>
+<section class="slide">
   <div class="slider">
     <img src="assets/gallery1.jpg">
     <img src="assets/gallery2.jpg">
@@ -57,22 +44,16 @@
   </div>
 </section>
 
-<!-- RSVP -->
-<section>
-  <h2>RSVP</h2>
-  <form id="rsvpForm">
+<section class="slide">
+  <iframe src="https://maps.google.com/maps?q=jakarta&output=embed"></iframe>
+</section>
+
+<section class="slide">
+  <form id="form">
     <input name="nama" placeholder="Nama">
-    <select name="kehadiran">
-      <option>Hadir</option>
-      <option>Tidak Hadir</option>
-    </select>
     <textarea name="ucapan"></textarea>
     <button>Kirim</button>
   </form>
 </section>
 
 </div>
-
-<script src="js/script.js"></script>
-</body>
-</html>
