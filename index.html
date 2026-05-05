@@ -1,101 +1,78 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>The Wedding of Romeo & Juliet</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Elite</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
-<body class="no-scroll">
+<body>
 
-    <audio id="bg-music" src="assets/music.mp3" loop></audio>
-    <div id="floral-container"></div>
+<!-- SOUND EFFECT -->
+<audio id="openSound">
+  <source src="assets/open.mp3" type="audio/mpeg">
+</audio>
 
-    <div id="envelope-screen">
-        <div class="envelope-wrapper">
-            <div class="envelope">
-                <div class="flap"></div>
-                <div class="letter">
-                    <h2 class="gold-text" style="font-size: 1.2rem;">Romeo & Juliet</h2>
-                    <p style="font-size: 0.7rem;">Tap Amplop Untuk Membuka</p>
-                </div>
-            </div>
-            <div class="envelope-front"></div>
-        </div>
-    </div>
+<!-- 3D ENVELOPE -->
+<div id="envelope" onclick="openEnvelope()">
+  <div class="flap"></div>
+  <div class="letter">Buka Undangan</div>
+</div>
 
-    <div id="cinematic-screen" class="hidden">
-        <div class="cinematic-wrap">
-            <h1 class="fade-text">Sebuah Perjalanan Cinta...</h1>
-            <h1 class="fade-text delay-1">Yang Ditulis Oleh Takdir...</h1>
-        </div>
-    </div>
+<!-- FLOWER CANVAS -->
+<canvas id="flowers"></canvas>
 
-    <main id="main-content" class="hidden">
-        
-        <section class="slide-page parallax-bg" id="hero">
-            <div class="overlay-dark">
-                <p class="subtitle">The Wedding Celebration Of</p>
-                <h1 class="title">Romeo & Juliet</h1>
-                <p class="date">12 . 12 . 2026</p>
-            </div>
-        </section>
+<!-- MAIN -->
+<div id="main" class="hidden">
 
-        <section class="slide-page" id="story">
-            <div class="content-box">
-                <h2 class="gold-text">Our Story</h2>
-                <div class="timeline">
-                    <div class="time-item">
-                        <h3>First Meet</h3>
-                        <p>Kisah ini dimulai dari sebuah pertemuan sederhana.</p>
-                    </div>
-                    <div class="time-item">
-                        <h3>The Journey</h3>
-                        <p>Melewati ribuan hari untuk sampai di titik ini.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<audio id="music" loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
 
-        <section class="slide-page" id="gallery-section">
-            <div class="content-box">
-                <h2 class="gold-text">Gallery</h2>
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="assets/galeri-1.jpg"></div>
-                        <div class="swiper-slide"><img src="assets/galeri-2.jpg"></div>
-                        <div class="swiper-slide"><img src="assets/galeri-3.jpg"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="parallax">
+  <h1>Nama Pria & Nama Wanita</h1>
+</section>
 
-        <section class="slide-page" id="rsvp-section">
-            <div class="content-box">
-                <h2 class="gold-text">Save The Date</h2>
-                <div class="countdown" id="countdown">
-                    <div><span id="hari">00</span><p>Hari</p></div>
-                    <div><span id="jam">00</span><p>Jam</p></div>
-                    <div><span id="menit">00</span><p>Menit</p></div>
-                    <div><span id="detik">00</span><p>Detik</p></div>
-                </div>
-                <form id="rsvp-form">
-                    <input type="text" name="Nama" placeholder="Nama Anda" required>
-                    <select name="Kehadiran">
-                        <option value="Hadir">Hadir</option>
-                        <option value="Ragu">Masih Ragu</option>
-                        <option value="Absen">Berhalangan</option>
-                    </select>
-                    <button type="submit" class="luxury-btn">Kirim RSVP</button>
-                </form>
-            </div>
-        </section>
+<section>
+  <h2>Countdown</h2>
+  <div id="timer"></div>
+</section>
 
-    </main>
+<!-- LOVE STORY -->
+<section class="timeline">
+  <h2>Cerita Cinta</h2>
+  <div class="timeline-item">Pertemuan - 2020</div>
+  <div class="timeline-item">Lamaran - 2025</div>
+  <div class="timeline-item">Menikah - 2026</div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+<!-- GALLERY -->
+<section>
+  <h2>Gallery</h2>
+  <div class="slider">
+    <img src="assets/gallery1.jpg">
+    <img src="assets/gallery2.jpg">
+    <img src="assets/gallery3.jpg">
+  </div>
+</section>
+
+<!-- RSVP -->
+<section>
+  <h2>RSVP</h2>
+  <form id="rsvpForm">
+    <input name="nama" placeholder="Nama">
+    <select name="kehadiran">
+      <option>Hadir</option>
+      <option>Tidak Hadir</option>
+    </select>
+    <textarea name="ucapan"></textarea>
+    <button>Kirim</button>
+  </form>
+</section>
+
+</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>
