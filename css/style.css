@@ -1,4 +1,9 @@
-body{margin:0;background:#0b0b0b;color:#fff;font-family:serif;overflow:hidden}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 
 #opening video{
  position:fixed;width:100%;height:100%;object-fit:cover
@@ -27,9 +32,16 @@ button{
  transition:1s;
 }
 
-.body{
- position:absolute;top:50%;left:50%;
- transform:translate(-50%,-50%);
+body{
+  font-family:'Playfair Display', serif;
+  background:#0b0b0b;
+  color:#fff;
+}
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:40px 20px;
 }
 
 /* SLIDE MODE */
@@ -47,4 +59,52 @@ button{
 #flowers{
  position:fixed;width:100%;height:100%;
  pointer-events:none;
+}
+
+/* =========================
+   GALLERY FIX PREMIUM
+========================= */
+.gallery h2{
+  margin-bottom:20px;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:15px;
+}
+
+/* BIAR GAMBAR GA KEGEDEAN */
+.gallery-grid img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+@media(max-width:768px){
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid img{
+    height:220px;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  h2{
+    font-size:20px;
+  }
 }
