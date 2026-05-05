@@ -87,6 +87,10 @@ section{
   transform:scale(1.05);
 }
 
+.gallery-grid img{
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+}
+
 /* =========================
    RESPONSIVE HP
 ========================= */
